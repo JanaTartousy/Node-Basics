@@ -48,7 +48,9 @@ function onDataReceived(text) {
   else if (text === 'list\n'){
     list();
   }
-  
+  else if (text === 'add\n' || text.startsWith('add')){
+  add(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -98,7 +100,17 @@ function list(){
   fullList.map((bn) => 
   console.log(fullList.indexOf(bn)+1+" "+bn)); 
   }
- 
+
+
+ function add(text){
+  if
+    (text.slice(3).trim() == "" )
+    console.log("Error")
+  
+  else {
+    fullList.push(text.slice(3).trim())
+    console.log("done")
+ }}
 
 // The following line starts the application
 startApp("Jana Tartousy")
