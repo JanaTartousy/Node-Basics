@@ -51,6 +51,9 @@ function onDataReceived(text) {
   else if (text === 'add\n' || text.startsWith('add')){
   add(text);
   }
+  else if (text === 'remove\n' || text.startsWith('remove')){
+    remove(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -112,5 +115,23 @@ function list(){
     console.log("done")
  }}
 
+
+ function remove(text){
+  if(text.slice(6).trim() == ""){
+    fullList.pop();
+  }else {
+    fullList.splice(parseInt(text.substring(6))-1,1)
+  }
+}
+
 // The following line starts the application
 startApp("Jana Tartousy")
+
+
+
+
+
+
+
+
+
