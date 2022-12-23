@@ -1,4 +1,6 @@
-
+var fs = Require ('fs');
+var data = fs.readFileSync('database.json');
+var js1 = JSON.parse(data);
 /**
  * Starts the application
  * This is the function that is run when the app starts
@@ -103,8 +105,10 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+var data= JSON.stringify(js1, null, 2)
+  fs.writeFileSync('database.json',data, 'utf8');
 
-let fullList= ["add","remove", "list"];
+let fullList= ["add","remove", "list", "edit"];
 function list(){
   fullList.map((bn) => 
   console.log(fullList.indexOf(bn)+1+" "+bn)); 
