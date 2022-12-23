@@ -24,11 +24,12 @@ function startApp(define){
  * 
  * For example, if the user entered 
  * ```
- * node tasks.js batata
+ * node tasks.js hello batata
  * ```
  * 
- * The text received would be "batata"
+ * The text received would be "hello batata!"
  * This function  then directs to other functions
+ * 
  * 
  * @param  {string} text data typed by the user
  * @returns {void}
