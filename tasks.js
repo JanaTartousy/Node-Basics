@@ -48,6 +48,7 @@ function onDataReceived(text) {
   else if (text === 'list\n'){
     list();
   }
+  
   else{
     unknownCommand(text);
   }
@@ -92,12 +93,12 @@ function quit(){
   process.exit();
 }
 
-let fullList= ["hello","exit", "quit"];
+let fullList= ["add","remove", "list"];
 function list(){
   fullList.map((bn) => 
   console.log(fullList.indexOf(bn)+1+" "+bn)); 
   }
-
+ 
 
 // The following line starts the application
 startApp("Jana Tartousy")
