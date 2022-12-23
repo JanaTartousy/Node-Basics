@@ -85,7 +85,7 @@ function hello(text){
  * Gives you all the possible commands
 */
 function help(){
-  console.log('exit, quit and hello')
+  console.log('hello :hello!\nhello+text :hello text!\nlist :shows the  list of tasks\nadd :add elements or tasks to the list\nremove :removes element or tasks from the list\n')
 }
 
 /**
