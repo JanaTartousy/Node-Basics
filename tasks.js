@@ -56,6 +56,7 @@ function onDataReceived(text) {
   }
   else if (text === 'edit\n' || text.startsWith('edit')){
     edit(text);}
+   
   else{
     unknownCommand(text);
   }
@@ -105,7 +106,13 @@ function list(){
   fullList.map((bn) => 
   console.log(fullList.indexOf(bn)+1+" "+bn)); 
   }
-
+  let done = false;
+  function firstlist() {
+    fullList.forEach(function list(val, n1) {
+      if (done) {
+        console.log(n1 + 1 + " - [✓] " + val);
+      } else console.log(n1 + 1 + " - [ ] " + val);
+    });}
 
  function add(text){
   if
@@ -143,6 +150,8 @@ function edit(text){
    fullList.push(text.slice(4).trim())
   }
   }
+
+ 
 
 // The following line starts the application
 startApp("Jana Tartousy")
