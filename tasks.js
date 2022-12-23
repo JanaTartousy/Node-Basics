@@ -120,8 +120,13 @@ function list(){
   if(text.slice(6).trim() == ""){
     fullList.pop();
   }else {
-    fullList.splice(parseInt(text.substring(6))-1,1)
-  }
+  } 
+ if(parseInt(text.substring(6))>fullList.length){
+    console.log("number does not exist")
+ }
+ else {
+   fullList.splice(parseInt(text.substring(6))-1,1)
+ }
 }
 
 // The following line starts the application
