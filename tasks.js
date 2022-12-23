@@ -56,7 +56,10 @@ function onDataReceived(text) {
   }
   else if (text === 'edit\n' || text.startsWith('edit')){
     edit(text);}
-   
+  else if (text === 'check\n' || text.startsWith('check')){
+      check(text);}
+  else if (text === 'uncheck\n' || text.startsWith('uncheck')){
+        uncheck(text);}
   else{
     unknownCommand(text);
   }
@@ -151,7 +154,21 @@ function edit(text){
   }
   }
 
- 
+  //check function
+  function check(text){
+    if(text.slice(5).trim()==""){
+      console.log("Error")
+    }else{
+      fullList[parseInt(text.slice(6).trim())-1].done =true;
+    }
+  }
+  //uncheck function
+  function uncheck(text){
+    if(text.slice(7).trim()==""){
+      console.log("Error")
+    }else{
+      fullList[parseInt(text.slice(8).trim())-1].done =false;
+    }}
 
 // The following line starts the application
 startApp("Jana Tartousy")
