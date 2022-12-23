@@ -91,7 +91,7 @@ function hello(text){
  * Gives you all the possible commands
 */
 function help(){
-  console.log('hello :hello!\nhello+text :hello text!\nlist :shows the  list of tasks\nadd :add elements or tasks to the list\nremove :removes element or tasks from the list\n')
+  console.log('hello :hello!\nhello+text :hello text!\nlist :shows the  list of tasks\nadd :add elements or tasks to the list\nremove :removes element or tasks from the list\ncheck :check the task if it is done\nuncheck :it will not check the undone tasks\n')
 }
 
 /**
