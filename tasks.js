@@ -67,7 +67,13 @@ function onDataReceived(text) {
   }
   
 }
-
+let tasks=
+[{"js1":"drinkcoffee","done":true},
+{"js1":"go to codi","done":false},
+{"js1":"code","done":false},
+{"js1":"assignments","done":true},
+{"js1":"timeover","done":true},
+{"js1":"sleep","done":false}]
 
 /**
  * prints "unknown command"
@@ -108,12 +114,14 @@ function quit(){
 var data= JSON.stringify(js1, null, 2)
   fs.writeFileSync('database.json',data, 'utf8');
 
+
 let fullList= ["add","remove", "list", "edit"];
 function list(){
   fullList.map((bn) => 
   console.log(fullList.indexOf(bn)+1+" "+bn)); 
   }
-  let done = false;
+
+  var done = false;
   function firstlist() {
     fullList.forEach(function list(val, n1) {
       if (done) {
@@ -173,6 +181,20 @@ function edit(text){
     }else{
       fullList[parseInt(text.slice(8).trim())-1].done =false;
     }}
+
+    var fs = required ('fs');
+
+  try{
+  if (fs.existsSync(process.argv[2])){
+    var data = fs.readFileSync(process.argv[2]);
+  }else{
+    var data = fs.readFileSync('database.json');
+  }
+  var js1 = JSON.parse(data);
+}
+  catch(Error){
+  console.error(Error);
+}
 
 // The following line starts the application
 startApp("Jana Tartousy")
